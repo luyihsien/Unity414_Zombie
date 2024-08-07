@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class HealthManager : MonoBehaviour
     public Sprite emptyHeart;
     public AudioSource audioSource;
     public AudioClip deathSound;
+    public GameObject replayButtom;
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +28,12 @@ public class HealthManager : MonoBehaviour
         if (health<=0){
             Time.timeScale=0f;
             audioSource.PlayOneShot(deathSound);
+            replayButtom.SetActive(true);
         }
+    }
+    public void Replay(){
+        Time.timeScale=1f;
+        SceneManager.LoadScene("Scene2");
+
     }
 }
