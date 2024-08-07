@@ -33,7 +33,7 @@ public class HealthManager : MonoBehaviour
     }
     public void Replay(){
         Time.timeScale=1f;
-        SceneManager.LoadScene("Scene2");
+        SceneManager.LoadScene("Scene");
 
     }
 }
