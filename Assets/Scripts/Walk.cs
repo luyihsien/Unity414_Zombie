@@ -15,6 +15,7 @@ public class Walk : MonoBehaviour
     bool isJumPressed,canJump;
     public HealthManager healthManager;
     public int damage=1;
+    public GameObject SwipeCollider;
     void Start() {
         myAnim=GetComponent<Animator>();
         myRigi=GetComponent<Rigidbody2D>();
@@ -28,6 +29,9 @@ public class Walk : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && canJump==true){
             isJumPressed=true;
             canJump=false;
+        }
+        if (Input.GetKeyDown(KeyCode.T)){
+            myAnim.SetTrigger("Swipe");
         }
 
     }
@@ -61,4 +65,13 @@ public class Walk : MonoBehaviour
             healthManager.ChangeHealth(damage);
         }     
     }
+    public void SwipeColliderOn(){
+        SwipeCollider.SetActive(true);
+
+    }
+    public void SwipeColliderOff(){
+        SwipeCollider.SetActive(false);
+
+    }
+
 }

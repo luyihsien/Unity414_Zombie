@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
-    public int health=2;
+    public int health=3;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
